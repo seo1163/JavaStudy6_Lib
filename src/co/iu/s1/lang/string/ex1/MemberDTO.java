@@ -8,7 +8,14 @@ public class MemberDTO {
 		private String pw;
 		private String name;
 		private String email;
+		private String age;
 		
+		public String getAge() {
+			return age;
+		}
+		public void setAge(String age) {
+			this.age = age;
+		}
 		//setter set 변수명 (매개변수로 값을  받아 오고)
 		//getter get 변수명 (return으로 값을 전환한다)
 		public String getId() {

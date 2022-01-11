@@ -6,7 +6,8 @@ public class StringMain {
 		StringStudy1 ss = new StringStudy1();
 		//ss.indexOfTest();
 		//ss.equalTset();
-		ss.splitTest();
+		ss.subStringTest();
+		
 		
 	
 	}

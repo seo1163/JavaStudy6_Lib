@@ -74,7 +74,7 @@ public class StringStudy1 {
 	
 	public void subStringTest() {
 		String title = "West Side Story";
-		String result = title.substring(title.indexOf("S"));
+		String result = title.substring(title.indexOf("i"));
 		System.out.println(result);
 		result = title.substring(5,8);
 		System.out.println(result);
