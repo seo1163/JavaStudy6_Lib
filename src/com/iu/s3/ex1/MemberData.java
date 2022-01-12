@@ -1,6 +1,7 @@
 package com.iu.s3.ex1;
 
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 public class MemberData {
 
@@ -21,8 +22,23 @@ public class MemberData {
 		//MemberDTO들을 ArrayList에 담아서 리턴
 		System.out.println("MemberEx1 Branch");
 		
+		StringTokenizer st = new StringTokenizer(this.data, "-");
+		ArrayList<MemberDTO> ar = new ArrayList<>();
 		
-		return null;
+		while(st.hasMoreTokens()) {
+			MemberDTO memberDTO = new MemberDTO();
+			memberDTO.setId(st.nextToken().trim());
+			memberDTO.setPw(st.nextToken().trim());
+			memberDTO.setName(st.nextToken().trim());
+			memberDTO.setEmail(st.nextToken().trim());
+			memberDTO.setAge(st.nextToken().trim());
+			ar.add(memberDTO);
+			
+		}
+		
+		
+		
+		return ar;
 	}
 	}
 	
