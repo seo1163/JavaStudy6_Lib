@@ -4,15 +4,67 @@ import java.util.Scanner;
 
 public class WrapperEx1 {
 	
+	private Scanner sc;
+	
+	
+	
 	public void ex2() {
+		System.out.println("주민번호를 앞자리를 입력해주세요");
+//		String number1 =sc.next();
+//		System.out.println(number1);
+		String number1= "940329-1163119";
 		// 키보드로 부터 주민등록 번호 입력
 		// 9 7 1 2 2 4 - 1 2 3 4 5 6 7 - 마지막 번호는 체크용 번호
 		//*2 3 4 5 6 7 - 8 9 2 3 4 5 
 		// 18 21 4 10 12 28 8 18 6 12 20 30
 		//결과를 모두 더함 ex)   122
 		
+		int source=2;
+		int sum=0;
+		
+		for(int i=0;i<number1.length()-1;i++) {
+	
+		String result = number1.substring(i, i+1);
+//		if(result.equals("-")) {
+//			continue;
+//		}
+		if(!result.equals("-")) {
+		System.out.println(Integer.parseInt(result));
+		}
+		}
+		//--------------------------------------------
+		for(int i =0;i<number1.length()-1;i++) {
+			
+			char ch = number1.charAt(i);
+			//Integer.parseInt(ch+"");
+		if(ch!='-') {
+		int num = Integer.parseInt(String.valueOf(ch));
+		sum=sum+num*source;
+		source++;
+		if(source>9) {
+			source=2;
+		}
+		}
+	}//for 끝
+		System.out.println(sum);
 		//2. 모두 더한 결과값을 11로 나누어서 나머지를 구함
 		//122/11  -> 11.......1
+		sum = sum%11;
+		
+		sum = 11-sum;
+		
+		if(sum>9) {
+			sum = sum%10;
+		}
+		
+		int check = Integer.parseInt(String.valueOf(number1.charAt(number1.length()-1)));
+		System.out.println("check :" +check);
+		System.out.println("Sum : "+sum);
+		if(sum==check) {
+			System.out.println("OK");
+		}else {
+			System.out.println("Fail");
+		}
 		
 		//3. 11로 나눈 나머지값을 11에서 빼고 그 값을 체크용 번호와 비교
 		// 11-1=10=7
@@ -55,7 +107,8 @@ public class WrapperEx1 {
 			System.out.println("나이 : " + age + "살");
 			
 		} else if(result2.equals("3")||result2.equals("4")) {
-			int age = year - (1900+i)+1;
+			int age = year - (2000+i)+1;
+			System.out.println("나이 : " + age + "살");
 			
 		} 
 
